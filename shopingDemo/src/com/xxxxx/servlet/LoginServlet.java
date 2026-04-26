@@ -1,6 +1,7 @@
 package com.xxxxx.servlet;
 
 
+import com.xxxxx.dao.UserDao;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -14,7 +15,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
 
-
+    private UserDao userDao=new UserDao();
 
 
     @Override
@@ -22,7 +23,7 @@ public class LoginServlet extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String username=req.getParameter("username");
         String password=req.getParameter("password");
-        if("admin".equals(username)&&"123456".equals(password)){
+        if(userDao.checkLogin(username,password)){
             HttpSession session=req.getSession();
             session.setAttribute("user",username);
             resp.sendRedirect("products");

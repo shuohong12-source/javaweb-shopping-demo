@@ -13,7 +13,7 @@
 </head>
 <body>
     <h2>用户登录</h2>
-    <form action="login.jsp" method="post">
+    <form action="login" method="post">
         用户：<input type="text" name="username"> <br><br>
         密码：<input type="password" name="password"> <br><br>
         <input type="submit" value="登录">
