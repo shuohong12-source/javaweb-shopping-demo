@@ -9,7 +9,7 @@ public class DBUtil {
             "jdbc:mysql://localhost:3306/shopping_demo?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai";
     private static final String USER = "root";
     //password
-    private static final String PASSWORD = "20051112";
+    private static final String PASSWORD = "123456";
     static {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
